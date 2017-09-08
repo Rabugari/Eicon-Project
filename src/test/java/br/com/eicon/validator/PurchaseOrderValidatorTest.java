@@ -70,14 +70,14 @@ public class PurchaseOrderValidatorTest {
 		PurchaseOrder order10 = createOrder(10L, createClient(1,"Fulano 10"), "Produto 10", 2L, 17.0D);
 		PurchaseOrder order11 = createOrder(11L, createClient(1,"Fulano 11"), "Produto 11", 4L, 98.0D);
 		
-		boolean result = validator.validade(Arrays.asList(order, order2, order3, order4,  order5, order6, order7, order8, order9, order10, order11));
+		boolean result = validator.valida(Arrays.asList(order, order2, order3, order4,  order5, order6, order7, order8, order9, order10, order11));
 		assertFalse(result);
 	}
 	
 	@Test
 	public void testaDescontoDe5() {
 		PurchaseOrder order = createOrder(12L, createClient(1, "Fulano"), "Produto 12", 6L, 10.0D);
-		validator.validade(Arrays.asList(order));
+		validator.valida(Arrays.asList(order));
 		entityManager.persist(order);
 		PurchaseOrder orderDB =  repository.findByControlId(12L).get();
 		assertEquals(30.0, orderDB.getTotalValue().doubleValue(), 0d);
@@ -86,7 +86,7 @@ public class PurchaseOrderValidatorTest {
 	@Test
 	public void testaDescontoDe10() {
 		PurchaseOrder order = createOrder(13L, createClient(1, "Fulano"), "Produto 13", 11L, 15.50D);
-		validator.validade(Arrays.asList(order));
+		validator.valida(Arrays.asList(order));
 		entityManager.persist(order);
 		PurchaseOrder orderDB =  repository.findByControlId(13L).get();
 		assertEquals(153.45D, orderDB.getTotalValue().doubleValue(), 0d);

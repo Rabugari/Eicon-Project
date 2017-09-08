@@ -8,6 +8,10 @@ import org.springframework.stereotype.Component;
 import br.com.eicon.domain.Client;
 import br.com.eicon.repository.ClientRepository;
 
+/**
+ * Ao iniciar a aplicação serão adicionados clientes, casos estes não estejam cadastrados
+ * @author Douglas-Takara
+ */
 @Component
 public class DataLoader implements ApplicationRunner{
 

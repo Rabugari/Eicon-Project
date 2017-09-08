@@ -29,6 +29,10 @@ import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import br.com.eicon.domain.PurchaseOrder;
 import br.com.eicon.service.PurchaseOrderService;
 
+/**
+ * Serviços REST para o consumo
+ * @author Douglas-Takara
+ */
 @RestController
 @RequestMapping("/pedidos")
 public class PurchaseOrderWS {
@@ -46,6 +50,12 @@ public class PurchaseOrderWS {
 		return service.findAll();
 	}
 	
+	/**
+	 * consulta de acordo com o numero de controle e a data de cadastro
+	 * @param pedidoId
+	 * @param dtCadastro - dd-MM-yyyy
+	 * @return
+	 */
 	@RequestMapping(value="/xml/{pedidoId}/{dataCadastro}", method=RequestMethod.GET, produces=MediaType.APPLICATION_XML_VALUE)
 	public List<PurchaseOrder> getPedidoXml(@PathVariable("pedidoId") Long pedidoId, @PathVariable("dataCadastro") @DateTimeFormat(iso=ISO.DATE) String dtCadastro) {
 		LocalDate date = LocalDate.parse(dtCadastro, DateTimeFormatter.ofPattern("dd-MM-yyyy"));

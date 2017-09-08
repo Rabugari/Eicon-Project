@@ -6,6 +6,10 @@ import org.springframework.stereotype.Component;
 import br.com.eicon.domain.PurchaseOrder;
 import br.com.eicon.repository.ClientRepository;
 
+/**
+ * Classe responsável por validar o serviço de clientes
+ * @author Douglas-Takara
+ */
 @Component
 public class ClientValidator {
 

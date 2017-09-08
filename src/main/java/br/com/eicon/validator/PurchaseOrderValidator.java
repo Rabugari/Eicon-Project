@@ -10,6 +10,10 @@ import org.springframework.stereotype.Component;
 import br.com.eicon.domain.PurchaseOrder;
 import br.com.eicon.repository.PurchaseOrderRepository;
 
+/**
+ * Classe responsável por validar o serviço de pedidos 
+ * @author Douglas-Takara
+ */
 @Component
 public class PurchaseOrderValidator{
 
@@ -24,7 +28,7 @@ public class PurchaseOrderValidator{
 	
 	private boolean result;
 	
-	public boolean validade(List<PurchaseOrder> orders) {
+	public boolean valida(List<PurchaseOrder> orders) {
 		
 		result = true;
 		

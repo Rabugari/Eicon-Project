@@ -14,6 +14,10 @@ import br.com.eicon.domain.PurchaseOrder;
 import br.com.eicon.repository.PurchaseOrderRepository;
 import br.com.eicon.validator.PurchaseOrderValidator;
 
+/**
+ * funções para controle de pedidos
+ * @author Douglas-Takara
+ */
 @Service
 public class PurchaseOrderService {
 
@@ -32,7 +36,7 @@ public class PurchaseOrderService {
 	}
 
 	public String saveAll(List<PurchaseOrder> purchaseOrders) {
-		if(validator.validade(purchaseOrders)) {
+		if(validator.valida(purchaseOrders)) {
 			purchaseOrders.forEach(order -> {
 				save(order);
 			});

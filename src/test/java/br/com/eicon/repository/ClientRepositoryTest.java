@@ -20,7 +20,7 @@ import br.com.eicon.domain.Client;
 @AutoConfigureTestDatabase(replace=Replace.NONE)
 public class ClientRepositoryTest {
 
-	private static final String CLIENT_NAME = "João";
+	private static final String CLIENT_NAME = "Galvão";
 
 	@Autowired
 	private TestEntityManager entityManager;
@@ -30,22 +30,22 @@ public class ClientRepositoryTest {
 	
 	@Before
 	public void preparaCliente() {
-		createClient(1L, CLIENT_NAME);
+		createClient(13L, CLIENT_NAME);
 	}
 	
 	@Test
 	public void deveEncontrarNomeCliente() {
-		assertEquals(CLIENT_NAME, repository.findOneByNameIgnoreCase("joão").get().getName());
-		assertEquals(CLIENT_NAME, repository.findOneByNameIgnoreCase("JOÃO").get().getName());
-		assertEquals(CLIENT_NAME, repository.findOneByNameIgnoreCase("João").get().getName());
-		assertEquals(CLIENT_NAME, repository.findOneByNameIgnoreCase("jOÃO").get().getName());
+		assertEquals(CLIENT_NAME, repository.findOneByNameIgnoreCase("galvão").get().getName());
+		assertEquals(CLIENT_NAME, repository.findOneByNameIgnoreCase("GALVÃO").get().getName());
+		assertEquals(CLIENT_NAME, repository.findOneByNameIgnoreCase("Galvão").get().getName());
+		assertEquals(CLIENT_NAME, repository.findOneByNameIgnoreCase("galvãO").get().getName());
 	}
 	
 	@Test
 	public void naoDeveEncontrarNomeCliete() {
-		assertFalse(CLIENT_NAME, repository.findOneByNameIgnoreCase("joao").isPresent());
-		assertFalse(CLIENT_NAME, repository.findOneByNameIgnoreCase("joõ").isPresent());
-		assertFalse(CLIENT_NAME, repository.findOneByNameIgnoreCase("Joã").isPresent());
+		assertFalse(CLIENT_NAME, repository.findOneByNameIgnoreCase("galv").isPresent());
+		assertFalse(CLIENT_NAME, repository.findOneByNameIgnoreCase("galvã").isPresent());
+		assertFalse(CLIENT_NAME, repository.findOneByNameIgnoreCase("alvão").isPresent());
 	}
 	
 	public void createClient(long id, String name) {

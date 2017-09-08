@@ -15,9 +15,11 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+/**
+ * Bean para pedido
+ * @author Douglas-Takara
+ */
 @Entity
-//@XmlAccessorType(XmlAccessType.FIELD)
-//@Validated(OrderValidator.class)
 public class PurchaseOrder {
 
 	public PurchaseOrder() {}
