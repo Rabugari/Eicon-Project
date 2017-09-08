@@ -1,0 +1,28 @@
+<purchase_orders>
+    <purchase_order>
+        <controlId>5</controlId>
+        <registerDate></registerDate>
+        <productName>Chocolates</productName>
+        <productValue>10.50</productValue>
+        <productQuantity>22</productQuantity>
+        <client>
+            <id>1</id>
+            <name>Tamandua</name>
+        </client>
+        <totalValue></totalValue>
+    </purchase_order>
+
+    <purchase_order>
+        <controlId>6</controlId>
+        <registerDate></registerDate>
+        <productName>Bananas</productName>
+        <productValue>8.30</productValue>
+        <productQuantity>7</productQuantity>
+        <client>
+            <id>33</id>
+            <name>Tamandua</name>
+        </client>
+        <totalValue></totalValue>
+    </purchase_order>
+
+</purchase_orders>
