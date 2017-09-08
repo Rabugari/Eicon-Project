@@ -1,10 +1,12 @@
 # Eicon-Project
 
-Projeto Web de notas de pedido.
+Projeto Web, exemplo de notas de pedidos.
 
-Ferramentas utilizadas:
--Spring
--REST
--MySql
--Hibernate
--Jackson
+Tecnologias utilizadas:
+-Spring-Boot;
+-REST;
+-Hibernate;
+-Mysql;
+-Junit;
+-Mockito;
+-Jackson;
